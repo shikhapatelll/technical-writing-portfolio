@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart-run-analyzer">
+  <title>Quickstart: run the analyzer and generate output.txt</title>
+  <shortdesc>Run the provided tester script or call the module entry point directly.</shortdesc>
+
+  <taskbody>
+    <prereq>
+      <p>You need Python 3.9+ and the files in this repo (module, CSV inputs).</p>
+    </prereq>
+
+    <steps>
+      <step>
+        <cmd>Run the tester script (recommended).</cmd>
+        <info>
+          <codeblock><![CDATA[
+python src/tester.py
+]]></codeblock>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Or call the function directly in Python.</cmd>
+        <info>
+          <codeblock><![CDATA[
+import univRanking
+univRanking.getInformation("Japan", "data/TopUni.csv", "data/capitals.csv")
+]]></codeblock>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Open output.txt and verify section order.</cmd>
+        <info>
+          <p>Output must contain sections 1–9 with exact labels and ordering.</p>
+        </info>
+      </step>
+    </steps>
+
+    <result>
+      <p><codeph>output.txt</codeph> is created/overwritten with a formatted report for the selected country.</p>
+    </result>
+  </taskbody>
+</task>

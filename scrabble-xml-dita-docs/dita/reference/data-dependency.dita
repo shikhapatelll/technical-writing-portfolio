@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="data_dependency">
+  <title>Data dependency</title>
+  <refbody>
+    <section>
+      <title>Dictionary file</title>
+      <p><b>Filename:</b> <codeph>CollinsScrabbleWords2019.txt</codeph></p>
+      <p><b>Format:</b> one word per line, uppercase A–Z.</p>
+      <p><b>Location:</b> must be resolvable from the process working directory (current implementation uses a hard-coded filename).</p>
+    </section>
+
+    <section>
+      <title>Performance note</title>
+      <p><codeph>getWords()</codeph> scans the entire dictionary file; runtime grows with file size.</p>
+    </section>
+
+  </refbody>
+</reference>

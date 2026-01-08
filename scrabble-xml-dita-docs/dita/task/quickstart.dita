@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart">
+  <title>Quick start</title>
+  <shortdesc>Compile the Java sources and generate words/scores from a 7-tile rack.</shortdesc>
+  <taskbody>
+    <prereq><p>Java 8+ installed. Ensure the dictionary file is accessible from the process working directory.</p></prereq>
+    <steps>
+      <step><cmd>Place <codeph>Scrabble.java</codeph>, <codeph>Tile.java</codeph>, and <codeph>CollinsScrabbleWords2019.txt</codeph> in the same working directory.</cmd></step>
+      <step><cmd>Compile the sources.</cmd>
+        <info><codeblock>javac -d out src/Tile.java src/Scrabble.java</codeblock></info>
+      </step>
+      <step><cmd>Create a <codeph>Scrabble</codeph> instance and call <codeph>getWords()</codeph> or <codeph>getScores()</codeph>.</cmd>
+        <info>
+          <codeblock>Scrabble game = new Scrabble();
+System.out.println("Rack: " + game.getLetters());
+int[] scores = game.getScores();</codeblock>
+        </info>
+      </step>
+
+    </steps>
+    <result><p>You can generate spellable words and scores for the current 7-tile rack.</p></result>
+  </taskbody>
+</task>

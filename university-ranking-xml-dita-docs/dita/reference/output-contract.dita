@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="output-contract">
+  <title>output.txt contract (required sections)</title>
+  <shortdesc>The analyzer must write nine sections to output.txt in order using exact labels.</shortdesc>
+
+  <refbody>
+    <section>
+      <title>Required ordering</title>
+      <ol>
+        <li>Universities count</li>
+        <li>Available countries</li>
+        <li>Available continents</li>
+        <li>University with top international rank</li>
+        <li>University with top national rank</li>
+        <li>Average score</li>
+        <li>Continent relative score</li>
+        <li>Capital city</li>
+        <li>Universities containing the capital name</li>
+      </ol>
+    </section>
+
+    <section>
+      <title>Labels and formats</title>
+      <ul>
+        <li><codeph>Total number of universities => &lt;COUNT&gt;</codeph></li>
+        <li><codeph>Available countries => COUNTRY1, COUNTRY2, ...</codeph> (uppercase, no duplicates)</li>
+        <li><codeph>Available continents => CONTINENT1, CONTINENT2, ...</codeph> (uppercase, no duplicates)</li>
+        <li><codeph>At international rank => &lt;WORLD_RANK&gt; the university name is => &lt;UNIVERSITY&gt;</codeph></li>
+        <li><codeph>At national rank => &lt;NATIONAL_RANK&gt; the university name is => &lt;UNIVERSITY&gt;</codeph></li>
+        <li><codeph>The average score => &lt;AVG_SCORE&gt;%</codeph> (rounded to 2 decimals)</li>
+        <li><codeph>The relative score to the top university in CONTINENT is => (&lt;AVG_SCORE&gt; / &lt;TOP_CONTINENT_SCORE&gt;) x 100% = &lt;RELATIVE_SCORE&gt;%</codeph> (rounded to 2 decimals)</li>
+        <li><codeph>The capital is => &lt;CAPITAL&gt;</codeph></li>
+        <li><codeph>The universities that contain the capital name =></codeph> then numbered list lines</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>Example (Japan)</title>
+      <codeblock><![CDATA[
+Total number of universities => 100
+Available countries => JAPAN, ...
+Available continents => NORTH AMERICA, ...
+At international rank => 13 the university name is => UNIVERSITY OF TOKYO
+At national rank => 1 the university name is => KYOTO UNIVERSITY
+The average score => 85.35%
+The relative score to the top university in ASIA is => (85.35 / 89.80) x 100% = 95.04%
+The capital is => TOKYO
+The universities that contain the capital name =>
+  #1 UNIVERSITY OF TOKYO
+]]></codeblock>
+    </section>
+  </refbody>
+</reference>

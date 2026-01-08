@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="troubleshooting">
+  <title>Troubleshooting</title>
+  <shortdesc>Fix the most common setup and runtime issues when loading datasets and running route queries.</shortdesc>
+
+  <taskbody>
+    <section>
+      <title>loadData() returns False</title>
+      <p><b>Likely cause:</b> file not found, unreadable file, or a parsing error during load.</p>
+      <p><b>Fix:</b> confirm paths and filenames, and ensure the input files follow the expected comma-separated formats.</p>
+    </section>
+
+    <section>
+      <title>KeyError when running route queries</title>
+      <p><b>Likely cause:</b> the origin (or destination when finding return flights) has no outgoing flights in <codeph>allFlights</codeph>.</p>
+      <p><b>Fix:</b> ensure that airport codes exist and that the dataset contains departing flights for that code before querying.</p>
+    </section>
+
+    <section>
+      <title>City/country queries return an empty list</title>
+      <p><b>Likely cause:</b> city/country matching is case-sensitive and must match the dataset spelling.</p>
+      <p><b>Fix:</b> use the same casing as in <codeph>airports.txt</codeph> (for example, <codeph>Toronto</codeph>, not <codeph>toronto</codeph>).</p>
+    </section>
+
+    <section>
+      <title>TypeError when creating a Flight</title>
+      <p><b>Likely cause:</b> origin/destination were not provided as <codeph>Airport</codeph> objects.</p>
+      <p><b>Fix:</b> create or look up <codeph>Airport</codeph> objects first, then pass them into the <codeph>Flight</codeph> constructor.</p>
+    </section>
+  </taskbody>
+</task>

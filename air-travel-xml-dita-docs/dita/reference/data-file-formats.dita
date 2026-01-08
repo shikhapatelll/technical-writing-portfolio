@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="data-file-formats">
+  <title>Input data file formats</title>
+  <shortdesc>Specifications for the airports and flights input files, including whitespace normalization rules.</shortdesc>
+
+  <refbody>
+    <section>
+      <title>airports.txt</title>
+      <p><b>Format per line:</b> <codeph>CODE,COUNTRY,CITY</codeph></p>
+      <p>Whitespace around each field may include spaces or tabs and must be removed during load.</p>
+      <codeblock><![CDATA[
+YYZ,Canada,Toronto
+DFW ,United States,Dallas
+]]></codeblock>
+      <p><b>Notes:</b> Airport codes are unique 3-letter identifiers and are used as keys in <codeph>allAirports</codeph>.</p>
+    </section>
+
+    <section>
+      <title>flights.txt</title>
+      <p><b>Format per line:</b> <codeph>FLIGHTNO,ORIGIN_CODE,DEST_CODE</codeph></p>
+      <p>Whitespace around each field may include spaces or tabs and must be removed during load.</p>
+      <codeblock><![CDATA[
+MCK533,YYZ,YUL
+LJH420, DXB ,YHZ
+]]></codeblock>
+      <p><b>Constraints:</b> ORIGIN_CODE and DEST_CODE must exist in <codeph>allAirports</codeph>.</p>
+      <p><b>Indexing:</b> Flights are grouped in <codeph>allFlights</codeph> under their ORIGIN_CODE key.</p>
+    </section>
+  </refbody>
+</reference>

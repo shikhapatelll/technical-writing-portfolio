@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart-load-and-query">
+  <title>Quickstart: load data and run common queries</title>
+  <shortdesc>Load the datasets and run example queries for direct routes, connections, and return flights.</shortdesc>
+
+  <taskbody>
+    <prereq>
+      <p>
+        You need Python 3.9+ and the module files (<codeph>Airport.py</codeph>, <codeph>Flight.py</codeph>, <codeph>Assign4.py</codeph>).
+      </p>
+    </prereq>
+
+    <steps>
+      <step>
+        <cmd>Load the datasets.</cmd>
+        <info>
+          <codeblock><![CDATA[
+from Assign4 import loadData
+
+ok = loadData("data/airports.txt", "data/flights.txt")
+print(ok)  # True on success; False on any file open/read/parsing error
+]]></codeblock>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Look up an airport by code.</cmd>
+        <info>
+          <codeblock><![CDATA[
+from Assign4 import getAirportByCode
+
+ord_airport = getAirportByCode("ORD")
+print(ord_airport)  # e.g., ORD(Chicago,United States) depending on __repr__
+]]></codeblock>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Find flights involving a city or country.</cmd>
+        <info>
+          <codeblock><![CDATA[
+from Assign4 import findAllCityFlights, findAllCountryFlights
+
+toronto_flights = findAllCityFlights("Toronto")
+brazil_flights = findAllCountryFlights("Brazil")
+
+print(len(toronto_flights), len(brazil_flights))
+]]></codeblock>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Find a direct flight or a one-stop connection.</cmd>
+        <info>
+          <codeblock><![CDATA[
+from Assign4 import findFlightBetween, getAirportByCode
+
+# Direct example (returns a string)
+print(findFlightBetween(getAirportByCode("PVG"), getAirportByCode("YOW")))
+
+# One-stop example (returns a set of connecting airport codes)
+print(findFlightBetween(getAirportByCode("DEL"), getAirportByCode("YYZ")))
+]]></codeblock>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Find a return flight for a given flight.</cmd>
+        <info>
+          <codeblock><![CDATA[
+from Assign4 import allFlights, findReturnFlight
+
+first = allFlights["YYZ"][1]   # Example: one flight departing YYZ
+return_flight = findReturnFlight(first)
+
+print(first)
+print(return_flight)  # Flight object or -1 if none exists
+]]></codeblock>
+        </info>
+      </step>
+    </steps>
+
+    <result>
+      <p>
+        You can now load data, run lookups and filters, and retrieve direct/one-stop routes and return flights.
+      </p>
+    </result>
+  </taskbody>
+</task>

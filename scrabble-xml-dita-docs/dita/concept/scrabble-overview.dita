@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="scrabble_overview">
+  <title>Scrabble Word Finder & Scoring Engine overview</title>
+  <conbody>
+    <p>This module generates all dictionary-valid words that can be spelled from a 7-tile rack and returns their Scrabble point values.</p>
+    <p><b>Audience:</b> Developers, QA, and support teams who need to run, test, or extend the module.</p>
+    <section>
+      <title>Key ideas</title>
+      <ul>
+        <li><b>Tile rack:</b> fixed-length array of 7 tiles.</li>
+        <li><b>Spellable word:</b> a dictionary entry formable from rack letters, using each tile at most once.</li>
+        <li><b>Score:</b> standard Scrabble letter values summed per word (no board multipliers).</li>
+      </ul>
+    </section>
+    <section>
+      <title>Data dependency</title>
+      <p>The module reads its dictionary from a text file (one word per line). The current implementation expects uppercase A–Z.</p>
+    </section>
+    <section>
+      <title>Known limitations</title>
+      <ul>
+        <li>No board modeling: no premium squares, cross-words, or placement constraints.</li>
+        <li>Scores are returned without word-score pairs (scores only).</li>
+      </ul>
+    </section>
+
+  </conbody>
+</concept>

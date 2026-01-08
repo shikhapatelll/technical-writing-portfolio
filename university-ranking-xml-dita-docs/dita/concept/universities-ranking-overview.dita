@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="universities-ranking-overview">
+  <title>Universities Ranking Analyzer overview</title>
+  <shortdesc>
+    The Universities Ranking Analyzer reads two CSV files (rankings and country metadata) and writes a fixed-format
+    report to <codeph>output.txt</codeph> for a selected country.
+  </shortdesc>
+
+  <conbody>
+    <section>
+      <title>Audience</title>
+      <p>Developers, QA, and support/enablement teams who need to understand the module interface and output contract.</p>
+    </section>
+
+    <section>
+      <title>Inputs and outputs</title>
+      <ul>
+        <li><b>Inputs:</b> <codeph>TopUni.csv</codeph> (university rankings) and <codeph>capitals.csv</codeph> (capital/continent mapping)</li>
+        <li><b>Output:</b> <codeph>output.txt</codeph> created/overwritten in a required order (sections 1–9)</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>Core capabilities</title>
+      <ul>
+        <li>Counts universities and lists available countries and continents.</li>
+        <li>Finds the top international and top national ranked university in the selected country.</li>
+        <li>Computes average score for the selected country and relative score to the top university in the continent.</li>
+        <li>Looks up the capital city and lists universities whose names contain the capital.</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>Entry point</title>
+      <p><codeph>getInformation(selectedCountry, rankingFileName, capitalsFileName)</codeph></p>
+    </section>
+  </conbody>
+</concept>

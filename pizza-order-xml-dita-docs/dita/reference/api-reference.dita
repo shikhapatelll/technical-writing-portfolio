@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="api-reference">
+  <title>API reference</title>
+  <shortdesc>Public receipt generator function.</shortdesc>
+
+  <refbody>
+    <section>
+      <title>generateReceipt(pizzaOrder)</title>
+      <p><b>Input:</b> <codeph>pizzaOrder</codeph> list as described in <xref href="order-data-model.dita"/>.</p>
+      <p><b>Output:</b> prints receipt to standard output. Returns <codeph>None</codeph>.</p>
+
+      <codeblock><![CDATA[
+from pizzaReceipt import generateReceipt
+
+pizzaOrder = [
+  ['S', ['PEPPERONI', 'ONION']],
+  ['L', ['HAM', 'BACON', 'ONION', 'TOMATO']],
+]
+
+generateReceipt(pizzaOrder)
+]]></codeblock>
+    </section>
+  </refbody>
+</reference>

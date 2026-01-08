@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="air-travel-user-guide">
+  <title>Air Travel Module — Developer &amp; Support Guide</title>
+
+  <topicref href="../dita/concept/air-travel-module-overview.dita" type="concept"/>
+  <topicref href="../dita/task/quickstart-load-and-query-data.dita" type="task"/>
+  <topicref href="../dita/reference/data-file-formats.dita" type="reference"/>
+  <topicref href="../dita/reference/data-model-reference.dita" type="reference"/>
+  <topicref href="../dita/reference/public-api-reference.dita" type="reference"/>
+  <topicref href="../dita/task/troubleshooting.dita" type="task"/>
+</map>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="troubleshooting">
+  <title>Troubleshooting</title>
+  <shortdesc>Fix common issues in ordering flow and receipt output.</shortdesc>
+
+  <taskbody>
+    <section>
+      <title>Receipt prints “You did not order anything”</title>
+      <p><b>Cause:</b> you quit at the initial prompt (no pizzas were added).</p>
+      <p><b>Fix:</b> answer <codeph>y</codeph>/<codeph>yes</codeph> at the first prompt, complete at least one pizza, then quit.</p>
+    </section>
+
+    <section>
+      <title>“Invalid topping” appears even when a topping looks correct</title>
+      <p><b>Cause:</b> the topping must match the supported set (spelling matters).</p>
+      <p><b>Fix:</b> type <codeph>LIST</codeph> to view valid toppings, then copy one exactly.</p>
+    </section>
+
+    <section>
+      <title>Total seems incorrect for 4+ toppings</title>
+      <p><b>Cause:</b> only the first 3 toppings are included; toppings beyond 3 are charged per extra topping based on size.</p>
+      <p><b>Fix:</b> verify extra topping lines and per-size rates in the pricing reference.</p>
+    </section>
+
+    <section>
+      <title>Tax has more than two decimals</title>
+      <p><b>Cause:</b> tax must be rounded to two decimals before adding to the total.</p>
+      <p><b>Fix:</b> round tax to 2 decimals and print values with two-decimal formatting.</p>
+    </section>
+  </taskbody>
+</task>

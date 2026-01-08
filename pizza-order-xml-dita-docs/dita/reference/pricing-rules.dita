@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="pricing-rules">
+  <title>Pricing rules</title>
+  <shortdesc>Base price depends on size; extra toppings beyond the first three are charged per size.</shortdesc>
+
+  <refbody>
+    <section>
+      <title>Base prices (CAD)</title>
+      <simpletable>
+        <sthead>
+          <stentry>Size</stentry>
+          <stentry>Base price</stentry>
+        </sthead>
+        <strow><stentry>S</stentry><stentry>7.99</stentry></strow>
+        <strow><stentry>M</stentry><stentry>9.99</stentry></strow>
+        <strow><stentry>L</stentry><stentry>11.99</stentry></strow>
+        <strow><stentry>XL</stentry><stentry>13.99</stentry></strow>
+      </simpletable>
+    </section>
+
+    <section>
+      <title>Extra topping charges (CAD)</title>
+      <p>The first 3 toppings are included. Each topping beyond 3 is charged as:</p>
+      <simpletable>
+        <sthead>
+          <stentry>Size</stentry>
+          <stentry>Extra topping (each)</stentry>
+        </sthead>
+        <strow><stentry>S</stentry><stentry>0.50</stentry></strow>
+        <strow><stentry>M</stentry><stentry>0.75</stentry></strow>
+        <strow><stentry>L</stentry><stentry>1.00</stentry></strow>
+        <strow><stentry>XL</stentry><stentry>1.25</stentry></strow>
+      </simpletable>
+    </section>
+
+    <section>
+      <title>Tax</title>
+      <p>Tax is 13% and is rounded to two decimals before being added to the final total.</p>
+    </section>
+  </refbody>
+</reference>

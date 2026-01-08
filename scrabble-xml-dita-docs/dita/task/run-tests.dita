@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="run_tests">
+  <title>Run the provided tests</title>
+  <shortdesc>Run the included Java test harness to validate word generation and scoring.</shortdesc>
+  <taskbody>
+    <steps>
+      <step><cmd>Compile the tests.</cmd>
+        <info><codeblock>javac -d out -cp out tests/TestGame.java</codeblock></info>
+      </step>
+      <step><cmd>Run the test harness.</cmd>
+        <info><codeblock>java -cp out TestGame</codeblock></info>
+      </step>
+      <step><cmd>Verify the output indicates all tests passed.</cmd></step>
+
+    </steps>
+    <result><p>A successful run prints that tests 1–8 passed.</p></result>
+  </taskbody>
+</task>

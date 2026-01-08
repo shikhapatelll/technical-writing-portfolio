@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="data-model">
+  <title>Data model reference</title>
+  <shortdesc>Classes used by the module: Airport and Flight.</shortdesc>
+
+  <refbody>
+    <section>
+      <title>Airport</title>
+      <p><b>Fields:</b> code (3-letter ID), city, country</p>
+      <p><b>Common methods:</b> getCode(), getCity(), getCountry(), setCity(city), setCountry(country)</p>
+      <p><b>String form:</b> <codeph>CODE(City,Country)</codeph> (tests ignore whitespace)</p>
+    </section>
+
+    <section>
+      <title>Flight</title>
+      <p><b>Fields:</b> flightNo (3 letters + 3 digits), origin (Airport), destination (Airport)</p>
+      <p><b>Validation:</b> constructor raises <codeph>TypeError</codeph> if origin/destination are not Airport objects.</p>
+      <p><b>Domestic vs international:</b> domestic when origin country equals destination country.</p>
+      <p><b>String form:</b> <codeph>Flight: &lt;no&gt; from &lt;origin city&gt; to &lt;dest city&gt; {domestic|international}</codeph></p>
+      <p><b>Equality:</b> two flights are equal when their origin and destination match.</p>
+    </section>
+  </refbody>
+</reference>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="quickstart-run-cli">
+  <title>Quickstart: run the ordering CLI and print a receipt</title>
+  <shortdesc>Run the CLI, enter size/toppings, then quit to print the receipt.</shortdesc>
+
+  <taskbody>
+    <prereq>
+      <p>You need Python 3.9+.</p>
+    </prereq>
+
+    <steps>
+      <step>
+        <cmd>Run the CLI.</cmd>
+        <info>
+          <codeblock><![CDATA[
+python src/order.py
+]]></codeblock>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Choose a size (S/M/L/XL).</cmd>
+        <info><p>Input is case-insensitive; the program normalizes the size to uppercase.</p></info>
+      </step>
+
+      <step>
+        <cmd>Add toppings (optional).</cmd>
+        <info>
+          <p>Enter one topping per line. Type <codeph>LIST</codeph> to display available toppings.</p>
+        </info>
+      </step>
+
+      <step>
+        <cmd>Finish the pizza with X.</cmd>
+        <info><p>Type <codeph>X</codeph> to stop adding toppings and add the pizza to the order.</p></info>
+      </step>
+
+      <step>
+        <cmd>Quit and print the receipt.</cmd>
+        <info><p>Enter <codeph>no</codeph> or <codeph>q</codeph> when prompted to stop ordering and print the receipt.</p></info>
+      </step>
+    </steps>
+
+    <result>
+      <p>The program prints an itemized receipt, then prints tax and final total.</p>
+    </result>
+  </taskbody>
+</task>

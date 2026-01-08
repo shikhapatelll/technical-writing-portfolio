@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="public-api-reference">
+  <title>Public API reference (Assign4.py)</title>
+  <shortdesc>Functions exposed by the module for loading data and querying airports and flights.</shortdesc>
+
+  <refbody>
+    <section>
+      <title>Global caches</title>
+      <p><codeph>allAirports</codeph>: dictionary mapping airport code → <codeph>Airport</codeph>.</p>
+      <p><codeph>allFlights</codeph>: dictionary mapping origin code → list of <codeph>Flight</codeph> objects departing that origin.</p>
+      <p><b>Note:</b> caches are not auto-cleared between loads; clear them before re-loading if needed.</p>
+    </section>
+
+    <section>
+      <title>loadData(airportFile, flightFile) → bool</title>
+      <p>Loads airports first, then flights; returns <codeph>True</codeph> on success and <codeph>False</codeph> on any exception.</p>
+      <codeblock><![CDATA[
+ok = loadData("data/airports.txt", "data/flights.txt")
+]]></codeblock>
+    </section>
+
+    <section>
+      <title>getAirportByCode(code) → Airport | -1</title>
+      <p>Returns the <codeph>Airport</codeph> with the given code, or <codeph>-1</codeph> if not found.</p>
+    </section>
+
+    <section>
+      <title>findAllCityFlights(city) → list[Flight]</title>
+      <p>Returns all flights where the origin or destination city matches <codeph>city</codeph>.</p>
+    </section>
+
+    <section>
+      <title>findAllCountryFlights(country) → list[Flight]</title>
+      <p>Returns all flights where the origin or destination country matches <codeph>country</codeph>.</p>
+    </section>
+
+    <section>
+      <title>findFlightBetween(origAirport, destAirport) → str | set[str] | -1</title>
+      <p>
+        If a direct flight exists, returns a string in the form:
+        <codeph>Direct Flight: ORIG to DEST</codeph>.
+      </p>
+      <p>
+        Otherwise, returns a <codeph>set</codeph> of one-hop connection airport codes (ORIG → X → DEST).
+        Returns <codeph>-1</codeph> if neither a direct nor a one-hop route exists.
+      </p>
+    </section>
+
+    <section>
+      <title>findReturnFlight(firstFlight) → Flight | -1</title>
+      <p>Returns the reverse-direction flight (destination → origin) if it exists; otherwise returns <codeph>-1</codeph>.</p>
+    </section>
+  </refbody>
+</reference>

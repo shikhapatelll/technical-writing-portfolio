@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="pizza-order-user-guide">
+  <title>Pizza Ordering CLI &amp; Receipt Generator — Developer &amp; Support Guide</title>
+
+  <topicref href="../dita/concept/pizza-order-overview.dita" type="concept"/>
+  <topicref href="../dita/task/quickstart-run-cli.dita" type="task"/>
+  <topicref href="../dita/reference/order-data-model.dita" type="reference"/>
+  <topicref href="../dita/reference/pricing-rules.dita" type="reference"/>
+  <topicref href="../dita/reference/receipt-output.dita" type="reference"/>
+  <topicref href="../dita/reference/api-reference.dita" type="reference"/>
+  <topicref href="../dita/task/troubleshooting.dita" type="task"/>
+</map>

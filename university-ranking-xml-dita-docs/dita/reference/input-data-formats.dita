@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="input-data-formats">
+  <title>Input data formats (CSV)</title>
+  <shortdesc>Field definitions for the rankings and capitals datasets.</shortdesc>
+
+  <refbody>
+    <section>
+      <title>TopUni.csv (rankings)</title>
+      <p>Each row contains 9 fields. The analyzer uses the following subset:</p>
+      <simpletable>
+        <sthead>
+          <stentry>Field</stentry>
+          <stentry>Type</stentry>
+          <stentry>Use</stentry>
+        </sthead>
+        <strow>
+          <stentry>World Rank</stentry>
+          <stentry>int</stentry>
+          <stentry>Top international rank (minimum value) for the selected country.</stentry>
+        </strow>
+        <strow>
+          <stentry>Institution Name</stentry>
+          <stentry>string</stentry>
+          <stentry>Printed in output; checked against the capital name.</stentry>
+        </strow>
+        <strow>
+          <stentry>Country</stentry>
+          <stentry>string</stentry>
+          <stentry>Filtering and available-countries list.</stentry>
+        </strow>
+        <strow>
+          <stentry>National Rank</stentry>
+          <stentry>int</stentry>
+          <stentry>Top national rank (minimum value) for the selected country.</stentry>
+        </strow>
+        <strow>
+          <stentry>Score</stentry>
+          <stentry>float</stentry>
+          <stentry>Average score and continent-relative score computations.</stentry>
+        </strow>
+      </simpletable>
+    </section>
+
+    <section>
+      <title>capitals.csv (country metadata)</title>
+      <p>Each row contains 6 fields. The analyzer uses:</p>
+      <simpletable>
+        <sthead>
+          <stentry>Field</stentry>
+          <stentry>Use</stentry>
+        </sthead>
+        <strow>
+          <stentry>Country Name</stentry>
+          <stentry>Lookup key for capital/continent by country.</stentry>
+        </strow>
+        <strow>
+          <stentry>Capital</stentry>
+          <stentry>Printed in output and used for capital-name matching.</stentry>
+        </strow>
+        <strow>
+          <stentry>Continent</stentry>
+          <stentry>Used to compute max score in continent.</stentry>
+        </strow>
+      </simpletable>
+    </section>
+  </refbody>
+</reference>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="university-ranking-user-guide">
+  <title>Universities Ranking Analyzer — Developer &amp; Support Guide</title>
+
+  <topicref href="../dita/concept/universities-ranking-overview.dita" type="concept"/>
+  <topicref href="../dita/task/quickstart-run-analyzer.dita" type="task"/>
+  <topicref href="../dita/reference/input-data-formats.dita" type="reference"/>
+  <topicref href="../dita/reference/api-reference.dita" type="reference"/>
+  <topicref href="../dita/reference/output-contract.dita" type="reference"/>
+  <topicref href="../dita/task/troubleshooting.dita" type="task"/>
+</map>

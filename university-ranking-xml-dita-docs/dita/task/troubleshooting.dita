@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="troubleshooting">
+  <title>Troubleshooting</title>
+  <shortdesc>Fix common problems when reading CSV inputs and producing output.txt.</shortdesc>
+
+  <taskbody>
+    <section>
+      <title>Program crashes with FileNotFoundError</title>
+      <p><b>Cause:</b> ranking/capitals CSV paths are incorrect.</p>
+      <p><b>Fix:</b> run from repo root (so relative paths work) or pass explicit paths (e.g., <codeph>data/TopUni.csv</codeph>).</p>
+    </section>
+
+    <section>
+      <title>output.txt is missing sections or labels do not match</title>
+      <p><b>Cause:</b> formatting differs from the required labels, ordering, or punctuation.</p>
+      <p><b>Fix:</b> compare the output against the specification and sample output, including commas/spaces and capitalization.</p>
+    </section>
+
+    <section>
+      <title>Average or relative score has too many decimals</title>
+      <p><b>Cause:</b> values are not rounded to two decimal places.</p>
+      <p><b>Fix:</b> round to two decimals for the average score and relative score, and print consistently.</p>
+    </section>
+
+    <section>
+      <title>Capital-name matching finds none (or too many) universities</title>
+      <p><b>Cause:</b> matching strategy differs (substring vs whole-word).</p>
+      <p><b>Fix:</b> document and implement a consistent rule (case-insensitive substring is common for support docs).</p>
+    </section>
+
+    <section>
+      <title>Unicode / special characters display incorrectly</title>
+      <p><b>Cause:</b> CSV not opened with UTF-8.</p>
+      <p><b>Fix:</b> open CSV files with <codeph>encoding="utf8"</codeph>.</p>
+    </section>
+  </taskbody>
+</task>

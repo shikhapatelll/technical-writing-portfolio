@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="pizza-order-overview">
+  <title>Pizza Ordering CLI &amp; Receipt Generator overview</title>
+  <shortdesc>
+    This program collects pizza orders in a command-line flow and prints an itemized receipt with tax and totals.
+  </shortdesc>
+
+  <conbody>
+    <section>
+      <title>Audience</title>
+      <p>Developers, QA testers, and technical writers documenting the ordering flow and receipt output.</p>
+    </section>
+
+    <section>
+      <title>Components</title>
+      <ul>
+        <li><codeph>order.py</codeph>: interactive CLI that collects pizza orders and calls the receipt generator.</li>
+        <li><codeph>pizzaReceipt.py</codeph>: receipt generator that prints itemized pricing, tax, and totals.</li>
+        <li><codeph>test.py</codeph>: test runner that exercises common input paths (mixed case, LIST, X, and q).</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>High-level flow</title>
+      <ol>
+        <li>Prompt to start an order (continue or quit).</li>
+        <li>Select a pizza size: S, M, L, XL.</li>
+        <li>Add toppings one per line; use LIST to display available toppings.</li>
+        <li>Enter X to finish the current pizza and optionally add another.</li>
+        <li>Generate and print the receipt.</li>
+      </ol>
+    </section>
+  </conbody>
+</concept>

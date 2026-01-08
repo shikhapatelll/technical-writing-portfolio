@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="receipt-output">
+  <title>Receipt output format</title>
+  <shortdesc>The receipt prints itemized pizzas, toppings, extra topping lines, then tax and total.</shortdesc>
+
+  <refbody>
+    <section>
+      <title>Printed sections</title>
+      <ul>
+        <li>Header: <codeph>Your order:</codeph></li>
+        <li>For each pizza: size + base price</li>
+        <li>Toppings (one per line) if any</li>
+        <li>Extra topping charges for toppings beyond the first 3</li>
+        <li>Tax and Total lines</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>Example (1 Large pizza with 4 toppings)</title>
+      <codeblock><![CDATA[
+Your order:
+Pizza 1: L                              11.99
+- HAM
+- ONION
+- MUSHROOM
+- OLIVE
+Extra Topping (L)       1.00
+Tax:                  1.69
+Total:                14.68
+]]></codeblock>
+    </section>
+
+    <section>
+      <title>Behavior when the order is empty</title>
+      <p>If <codeph>pizzaOrder</codeph> is empty, the generator prints: <codeph>You did not order anything</codeph>.</p>
+    </section>
+  </refbody>
+</reference>

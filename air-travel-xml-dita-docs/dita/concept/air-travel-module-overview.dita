@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="air-travel-module-overview">
+  <title>Air Travel Module overview</title>
+  <shortdesc>
+    The Air Travel module loads airport and flight data from two comma-separated text files and
+    provides query functions for city/country filtering, direct or one-stop routes, and return flights.
+  </shortdesc>
+
+  <conbody>
+    <p>
+      The module builds two in-memory caches:
+      <uicontrol>allAirports</uicontrol> (airport code → <codeph>Airport</codeph>) and
+      <uicontrol>allFlights</uicontrol> (origin code → list of <codeph>Flight</codeph>).
+    </p>
+
+    <section>
+      <title>Audience</title>
+      <p>Developers, QA, and support teams who need to understand inputs, outputs, and expected behaviors.</p>
+    </section>
+
+    <section>
+      <title>Key capabilities</title>
+      <ul>
+        <li>Load and normalize airport/flight rows (trim whitespace and remove tabs).</li>
+        <li>Query flights by city or country (origin or destination matches).</li>
+        <li>Find direct flights or single-hop connections (origin → X → destination).</li>
+        <li>Find a return flight (destination → origin) for an existing flight.</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>Files documented</title>
+      <p>
+        Core behavior is implemented in <codeph>Assign4.py</codeph>, using the data model classes
+        <codeph>Airport</codeph> and <codeph>Flight</codeph>.
+      </p>
+    </section>
+  </conbody>
+</concept>

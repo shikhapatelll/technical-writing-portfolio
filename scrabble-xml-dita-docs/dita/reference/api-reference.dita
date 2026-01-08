@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="api_reference">
+  <title>API reference</title>
+  <refbody>
+    <section>
+      <title>Tile</title>
+      <p><b>Purpose:</b> Represents a single letter tile.</p>
+      <simpletable>
+        <sthead><stentry>Member</stentry><stentry>Description</stentry></sthead>
+        <strow><stentry><codeph>Tile()</codeph></stentry><stentry>Creates a random uppercase letter A–Z.</stentry></strow>
+        <strow><stentry><codeph>Tile(char c)</codeph></stentry><stentry>Creates a tile with a provided letter.</stentry></strow>
+        <strow><stentry><codeph>char getLetter()</codeph></stentry><stentry>Returns the tile letter.</stentry></strow>
+      </simpletable>
+    </section>
+
+    <section>
+      <title>Scrabble</title>
+      <p><b>Purpose:</b> Owns a 7-tile rack and provides dictionary word generation and scoring.</p>
+
+      <simpletable>
+        <sthead><stentry>Method</stentry><stentry>Returns</stentry><stentry>Notes</stentry></sthead>
+        <strow><stentry><codeph>Scrabble()</codeph></stentry><stentry>—</stentry><stentry>Initializes a rack of 7 random tiles.</stentry></strow>
+        <strow><stentry><codeph>Scrabble(Tile[] tiles)</codeph></stentry><stentry>—</stentry><stentry>Throws <codeph>IllegalArgumentException</codeph> if length != 7.</stentry></strow>
+        <strow><stentry><codeph>String getLetters()</codeph></stentry><stentry>String</stentry><stentry>Returns the rack letters in order.</stentry></strow>
+        <strow><stentry><codeph>ArrayList&lt;String&gt; getWords()</codeph></stentry><stentry>List of words</stentry><stentry>Reads the dictionary file and returns all spellable words.</stentry></strow>
+        <strow><stentry><codeph>int[] getScores()</codeph></stentry><stentry>int[]</stentry><stentry>Scores for all spellable words, sorted ascending.</stentry></strow>
+        <strow><stentry><codeph>boolean equals(Scrabble other)</codeph></stentry><stentry>boolean</stentry><stentry>True if racks contain the same multiset of letters.</stentry></strow>
+      </simpletable>
+    </section>
+
+    <section>
+      <title>Scoring rules (letter values)</title>
+      <p>Scores are computed by summing the standard letter values for each letter in a word.</p>
+      <simpletable>
+        <sthead><stentry>Points</stentry><stentry>Letters</stentry></sthead>
+        <strow><stentry>1</stentry><stentry>A, E, I, L, N, O, R, S, T, U</stentry></strow>
+        <strow><stentry>2</stentry><stentry>D, G</stentry></strow>
+        <strow><stentry>3</stentry><stentry>B, C, M, P</stentry></strow>
+        <strow><stentry>4</stentry><stentry>F, H, V, W, Y</stentry></strow>
+        <strow><stentry>5</stentry><stentry>K</stentry></strow>
+        <strow><stentry>8</stentry><stentry>J, X</stentry></strow>
+        <strow><stentry>10</stentry><stentry>Q, Z</stentry></strow>
+      </simpletable>
+    </section>
+
+    <section>
+      <title>Error handling</title>
+      <ul>
+        <li>Dictionary missing: word generation/scoring may raise <codeph>FileNotFoundException</codeph>.</li>
+        <li>Invalid rack length: <codeph>Scrabble(Tile[])</codeph> throws <codeph>IllegalArgumentException</codeph> when length != 7.</li>
+        <li>Invalid letter during scoring: throws <codeph>IllegalArgumentException</codeph>.</li>
+      </ul>
+    </section>
+
+  </refbody>
+</reference>

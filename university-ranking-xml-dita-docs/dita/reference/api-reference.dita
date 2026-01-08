@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="api-reference">
+  <title>Module interface reference</title>
+  <shortdesc>Public entry point for generating the universities ranking report.</shortdesc>
+
+  <refbody>
+    <section>
+      <title>getInformation()</title>
+      <p><b>Signature:</b> <codeph>getInformation(selectedCountry, rankingFileName="TopUni.csv", capitalsFileName="capitals.csv")</codeph></p>
+      <p><b>Inputs:</b></p>
+      <ul>
+        <li><codeph>selectedCountry</codeph>: country name (case-insensitive)</li>
+        <li><codeph>rankingFileName</codeph>: path to <codeph>TopUni.csv</codeph></li>
+        <li><codeph>capitalsFileName</codeph>: path to <codeph>capitals.csv</codeph></li>
+      </ul>
+      <p><b>Outputs:</b> creates/overwrites <codeph>output.txt</codeph> in the current working directory.</p>
+
+      <codeblock><![CDATA[
+import univRanking
+univRanking.getInformation("USA", "data/TopUni.csv", "data/capitals.csv")
+]]></codeblock>
+    </section>
+
+    <section>
+      <title>Behavior summary</title>
+      <p>
+        The function reads both CSV files, filters universities by selected country, computes rank and score metrics,
+        then writes nine ordered sections to <codeph>output.txt</codeph>.
+      </p>
+    </section>
+  </refbody>
+</reference>

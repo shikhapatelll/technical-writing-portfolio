@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="scrabble_dev_guide">
+  <title>Scrabble Word Finder &amp; Scoring Engine — Developer Guide</title>
+
+  <topicref href="../dita/concept/scrabble-overview.dita" type="concept"/>
+  <topicref href="../dita/task/quickstart.dita" type="task"/>
+  <topicref href="../dita/task/run-tests.dita" type="task"/>
+  <topicref href="../dita/task/troubleshooting.dita" type="task"/>
+  <topicref href="../dita/reference/data-dependency.dita" type="reference"/>
+  <topicref href="../dita/reference/api-reference.dita" type="reference"/>
+</map>

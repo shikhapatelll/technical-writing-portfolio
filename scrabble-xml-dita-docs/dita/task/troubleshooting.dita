@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="troubleshooting">
+  <title>Troubleshooting</title>
+  <shortdesc>Fix common setup and runtime issues when generating words and scores.</shortdesc>
+  <taskbody>
+    <steps>
+      <step><cmd>If you get <codeph>FileNotFoundException</codeph>, confirm <codeph>CollinsScrabbleWords2019.txt</codeph> is in the working directory and the filename matches exactly.</cmd></step>
+      <step><cmd>If scoring throws <codeph>IllegalArgumentException</codeph>, validate that dictionary entries contain only letters A–Z (uppercase expected).</cmd></step>
+      <step><cmd>If runtime is slow, note that <codeph>getWords()</codeph> scans the entire dictionary; runtime grows roughly linearly with dictionary size.</cmd></step>
+      <step><cmd>If you moved the dictionary to another folder, avoid hard-coding an absolute path; keep a relative workflow so the code runs on other machines.</cmd></step>
+
+    </steps>
+  </taskbody>
+</task>
